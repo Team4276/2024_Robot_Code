@@ -33,7 +33,7 @@ public class Roller extends GenericRollerSystem<Roller.VoltageGoal> {
         super("Roller", io);
     }
 
-    @Override @AutoLogOutput
+    @Override
     public VoltageGoal getGoal() {
         return goal;
     }

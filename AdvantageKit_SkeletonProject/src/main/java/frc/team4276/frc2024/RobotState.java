@@ -1,5 +1,7 @@
 package frc.team4276.frc2024;
 
+import org.littletonrobotics.junction.AutoLogOutput;
+
 import edu.wpi.first.math.Matrix;
 import edu.wpi.first.math.Nat;
 import edu.wpi.first.math.StateSpaceUtil;
@@ -44,7 +46,7 @@ public class RobotState {
             new SwerveModulePosition(),
             new SwerveModulePosition()
         });
-    private Rotation2d mPrevGyroHeading;
+    private Rotation2d mPrevGyroHeading = new Rotation2d();
 
     private Field.POIs mPOIs = Field.Red.kPOIs;
 
@@ -136,6 +138,8 @@ public class RobotState {
         kFerryFlywheelRPMs.put(7.9, 4000.0);
         kFerryFlywheelRPMs.put(9.3, 4500.0);
         kFerryFlywheelRPMs.put(12.3, 5000.0);
+
+        resetKalmanFilters();
     }
 
     public synchronized void reset(double start_time, Pose2d initial_pose) { //TODO: check if need to reset prev heading
@@ -241,6 +245,7 @@ public class RobotState {
         }
     }
 
+    @AutoLogOutput(key = "RobotState/EstimatedPose")
     public synchronized Pose2d getEstimatedPose() {
         return mEstimatedPose;
     }

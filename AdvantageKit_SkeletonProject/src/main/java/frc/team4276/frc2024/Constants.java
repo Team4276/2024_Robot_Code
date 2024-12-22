@@ -44,7 +44,7 @@ public final class Constants {
         COMPBOT
     }
 
-    public static final RobotType robotType = RobotType.COMPBOT;
+    public static final RobotType robotType = RobotType.SIMBOT;
 
     public static RobotType getType(){
         return robotType;

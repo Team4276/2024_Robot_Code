@@ -44,23 +44,27 @@ public class DriveConstants {
             new Translation2d(-kTrackWidthY / 2, kTrackWidthX / 2),
             new Translation2d(-kTrackWidthY / 2, -kTrackWidthX / 2));
 
-    public static final ModuleConfig[] kModuleConfigs = new ModuleConfig[4];
+    public static ModuleConfig[] kModuleConfigs = new ModuleConfig[4];
     static {
+        kModuleConfigs[0] = new ModuleConfig();
         kModuleConfigs[0].kName = "Front Left";
         kModuleConfigs[0].kDriveId = Ports.FRONT_LEFT_DRIVE;
         kModuleConfigs[0].kTurnId = Ports.FRONT_LEFT_TURN;
         kModuleConfigs[0].kOffset = -Math.PI / 2;
         
+        kModuleConfigs[1] = new ModuleConfig();
         kModuleConfigs[1].kName = "Front Right";
         kModuleConfigs[1].kDriveId = Ports.FRONT_RIGHT_DRIVE;
         kModuleConfigs[1].kTurnId = Ports.FRONT_RIGHT_TURN;
         kModuleConfigs[1].kOffset = 0;
 
+        kModuleConfigs[2] = new ModuleConfig();
         kModuleConfigs[2].kName = "Back Left";
         kModuleConfigs[2].kDriveId = Ports.BACK_LEFT_DRIVE;
         kModuleConfigs[2].kTurnId = Ports.BACK_LEFT_TURN;
         kModuleConfigs[2].kOffset = Math.PI;
         
+        kModuleConfigs[3] = new ModuleConfig();
         kModuleConfigs[3].kName = "Back Right";
         kModuleConfigs[3].kDriveId = Ports.BACK_RIGHT_DRIVE;
         kModuleConfigs[3].kTurnId = Ports.BACK_RIGHT_TURN;
